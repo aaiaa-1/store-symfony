@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add A New Product{% endblock %}
+
+{% block body %}
+{% include '_partials/_nav.html.twig' %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Add a new product</h1>
+                {{form_start(productForm)}}
+                {{form_row(productForm.name)}}
+                {{form_row(productForm.description)}}
+                {{form_row(productForm.category)}}
+                {{form_row(productForm.price)}}
+                {{form_row(productForm.stock)}}
+                <button type="submit" class="btn btn-primary">Add</button>
+                {{form_end(productForm)}}
+            </div>
+        </div>
+    </div>
+{% endblock %}
