@@ -59,6 +59,21 @@
         Welcome to the <strong>Store</strong>
     </div>
 
+    <div class="container">
+        <div class="row">
+            {% for category in category %}
+                <div class="col-12">
+                    {{ category.name }}
+                </div>
+            {% endfor %}
+            <div class="col-12">
+                {{ dump() }}
+            </div>
+        </div>
+    </div>
+
+
+
     {% include "_partials/_footer.html.twig" %}
 {% endblock %}
 
