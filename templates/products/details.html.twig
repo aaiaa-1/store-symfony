@@ -1,16 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductsController!{% endblock %}
+{% block title %}Product Details{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
+{% include '_partials/_nav.html.twig' %}
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    <h1> Details Of A Products </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card my-3" style="max-width: 1000px; height: 1000px;">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                                <div class="card-body my-5">
+                                <h5 class="card-title">{{product.name}}</h5>
+                                <p class="card-text">{{product.description}}</p>
+                                <h5 style="font-weight:700; color:#ef233c;">{{product.price}} $</h5>
+                                <p class="text-muted"> only {{product.stock}} in stock </p>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}

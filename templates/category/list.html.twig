@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %} List of Products {% endblock %}
+{% block body %}
+    {% include '_partials/_nav.html.twig' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mt-5">{{category.parent.name}} > {{category.name}} > List Of Products </h1>
+            </div>  
+            {% for product in products %}
+                <div class="col-3 my-3">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title"> {{product.name}} </h5>
+                        <p> {{product.description}} </p>
+                        <a href="{{ path('app_products_details',{slug:product.slug}) }}" class="btn btn-primary">View Details </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
